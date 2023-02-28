@@ -497,12 +497,11 @@ var colorArr = [Math.random() + 0.2, Math.random() + 0.2, Math.random() + 0.2];
 
 canvas.addEventListener("mousemove", function (e) {
   count++;
-
   count > 25 &&
     ((colorArr = [
-      Math.random() + 0.2,
-      Math.random() + 0.2,
-      Math.random() + 0.2,
+      Math.random() + 0.01,
+      Math.random() + 0.01, //CHANGIN COLORS BUT RANDOMLY
+      Math.random() + 0.01,
     ]),
     (count = 0));
 
@@ -523,7 +522,6 @@ canvas.addEventListener(
     var touches = e.targetTouches;
 
     count++;
-
     count > 25 &&
       ((colorArr = [
         Math.random() + 0.2,
@@ -553,30 +551,30 @@ canvas.addEventListener(
   false
 );
 
-function m(t) {
-  for (
-    var e,
-      n = document.getElementById(t),
-      i = n.innerHTML.replace("&amp;", "&").split(""),
-      a = "",
-      o = 0,
-      s = i.length;
-    s > o;
-    o++
-  ) {
-    e = i[o].replace("&", "&amp");
-    a += e.trim()
-      ? '<span class="letter-' + o + '">' + e + "</span>"
-      : "&nbsp;";
-  }
+// function m(t) {
+//   for (
+//     var e,
+//       n = document.getElementById(t),
+//       i = n.innerHTML.replace("&amp;", "&").split(""),
+//       a = "",
+//       o = 0,
+//       s = i.length;
+//     s > o;
+//     o++
+//   ) {
+//     e = i[o].replace("&", "&amp");
+//     a += e.trim()
+//       ? '<span class="letter-' + o + '">' + e + "</span>"
+//       : "&nbsp;";
+//   }
 
-  n.innerHTML = a;
+//   n.innerHTML = a;
 
-  setTimeout(function () {
-    n.className = "transition-in";
-  }, 500 * Math.random() + 500);
-}
+//   setTimeout(function () {
+//     n.className = "transition-in";
+//   }, 500 * Math.random() + 500);
+// }
 
-window.onload = function () {
-  m("h1");
-};
+// window.onload = function () {
+//   m("h1");
+// };
